@@ -18,7 +18,6 @@ class ProductController extends BaseController
      */
     public function create(): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product, ['action' => $this->generateUrl('product_store')]);
         return $this->render('product\create.html.twig', ['form' => $form->createView()]);
@@ -30,7 +29,6 @@ class ProductController extends BaseController
      */
     public function store(Request $request): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
