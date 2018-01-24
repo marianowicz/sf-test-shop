@@ -38,7 +38,7 @@ class ProductController extends BaseController
         }
 
         $em = $this->getDoctrine()->getManager();
-        $em->persist($product);
+        $em->persist($form->getData());
         $em->flush();
 
         return $this->redirect($this->generateUrl('homepage'));
