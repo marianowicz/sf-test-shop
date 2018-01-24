@@ -10,3 +10,8 @@
 .web-server-pid
 ###< symfony/web-server-bundle ###
 nbproject
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
