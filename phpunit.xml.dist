@@ -15,6 +15,9 @@
         <env name="APP_SECRET" value="s$cretf0rt3st" />
         <env name="SHELL_VERBOSITY" value="-1" />
         <!-- define your env variables for the test env here -->
+
+        <!-- the value is the Doctrine connection string in DSN format -->
+        <env name="DATABASE_URL" value="mysql://USERNAME:PASSWORD@127.0.0.1/DB_NAME" />
     </php>
 
     <testsuites>
@@ -31,5 +34,6 @@
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+        <listener class="\DAMA\DoctrineTestBundle\PHPUnit\PHPUnitListener" />
     </listeners>
 </phpunit>
